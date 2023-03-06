@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reservations', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->uuid('id')->primary();
+            $table->uuid('user_id');
             $table->string('reservable_type');
-            $table->unsignedBigInteger('reservable_id');
+            $table->uuid('reservable_id');
             $table->date('start_date');
             $table->date('end_date');
             $table->timestamps();

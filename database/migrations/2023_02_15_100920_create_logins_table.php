@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('logins', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->uuid('user_id');
             $table->ipAddress('ip');
             $table->string('country');
             $table->string('country_code');
