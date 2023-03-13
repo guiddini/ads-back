@@ -19,10 +19,11 @@ return new class extends Migration
             $table->string('name');
             $table->text('desc');
             $table->string('image');
-            $table->integer('cat');
+            $table->integer('category_id');
             $table->double('price', 8,2);
-            $table->double('height', 8, 2);
-            $table->double('width', 8, 2);
+            $table->double('height', 8, 2)->nullable();
+            $table->double('width', 8, 2)->nullable();
+            $table->integer('duration')->nullable();
             $table->text('location');
             $table->boolean('available')->default(true);
             $table->timestamps();

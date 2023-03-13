@@ -9,8 +9,6 @@ use App\Models\User;
 use App\Models\Login;
 use Carbon\Carbon;
 use Illuminate\Auth\Events\Verified;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;

@@ -24,6 +24,7 @@ class SpacesResource extends JsonResource
             'width'=>$this->width,
             'location'=>$this->location,
             'user'=>new UsersResource($this->user),
+            'category'=> CategoriesResource::collection($this->categories),
             'reservations'=>ReservationsResource::collection($this->reservations)
         ];
     }

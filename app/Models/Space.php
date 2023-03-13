@@ -26,6 +26,10 @@ class Space extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function categories(){
+        return $this->hasMany(Category::class, 'id', 'category_id');
+    }
+
     public function reservations(){
         return $this->morphMany(Reservation::class, 'reservable');
     }

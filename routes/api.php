@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,12 @@ Route::group(['middleware'=>['auth:sanctum', 'verified']], function (){
    Route::delete('/users/{user}/delete', [UsersController::class, 'destroy']);
    // Change Password
    Route::post('users/{user}/password/change', [AuthController::class, 'change']);
+
+   Route::get('/categories', [CategoriesController::class, 'index']);
+   Route::get('/categories/{category}', [CategoriesController::class, 'show']);
+   Route::post('/categories/store', [CategoriesController::class, 'store']);
+   Route::patch('/categories/{category}/update', [CategoriesController::class, 'update']);
+   Route::delete('/categories/{category}/delete', [CategoriesController::class, 'destroy']);
 
    Route::get('/spaces', [SpacesController::class, 'index']);
    Route::post('/spaces/store', [SpacesController::class, 'store']);
